@@ -1,0 +1,11 @@
+## rank: 3
+$onset = 0;
+for $i in 1...8 do (
+    for $j in $i + (0...7) do (
+        ezsampler(
+            f2mc(($j/$i) * 110) 
+        ).transcribe($onset);
+        $onset += 150
+    ) 
+);
+compile()

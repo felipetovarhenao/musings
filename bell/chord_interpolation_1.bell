@@ -1,0 +1,10 @@
+## rank: 4
+$chord1 = c5 e5 g5 bb5;
+$chord2 = c#5 e5 f#5 a5;
+for $w in arithmser(0, 1, null, 8) do (
+    $chord = (1 - $w) * $chord1 + $w * $chord2;
+    for $p in $chord do (
+        ezsampler($p.round()).transcribe($w * 4500) 
+    ) 
+);
+compile(@clefs 'g')

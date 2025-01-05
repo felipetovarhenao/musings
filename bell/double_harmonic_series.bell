@@ -1,0 +1,9 @@
+## rank: 6.5
+$onset = 0;
+for $i in 1...12 do (
+    for $j in 1...$i do (
+        ezsampler(f2mc($i/$j * 220)).transcribe($onset);
+        $onset += 120
+    ) 
+);
+compile(@clefs 'fgg')

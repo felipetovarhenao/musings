@@ -1,0 +1,14 @@
+## rank: 6
+$n = 7;
+$onset = 0;
+$period = 3000;
+for $r in 1...2 do (
+    for $i in 1...$n do (
+        $beat = $period/$i;
+        for $j in 1...$i do (
+            ezsampler(f2mc($i * 110)).transcribe(($j - 1) * $beat + $onset) 
+        ) 
+    );
+    $onset += $period
+);
+compile()

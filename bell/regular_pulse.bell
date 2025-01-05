@@ -1,0 +1,5 @@
+## rank: 1
+for $i in 0...15 do (
+    ezsampler().transcribe($i * 200) 
+);
+compile(@clefs 'g')

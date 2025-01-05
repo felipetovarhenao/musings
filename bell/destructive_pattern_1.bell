@@ -1,0 +1,12 @@
+## rank: 3.8
+$pat = c5 d5 e5 f5 g5 a5 b5 c6;
+$onset = 0;
+for $i in rev(1...length($pat)) do (
+    for $mc $j in $pat do (
+        if $j <= $i then (
+            ezsampler($mc).transcribe($onset) 
+        );
+        $onset += 125
+    ) 
+);
+compile(@clefs 'g')

@@ -1,0 +1,13 @@
+## rank: 2.5
+$scale = c5 d5 e5 f5 g5 a5 b5;
+$triad = 0 400 700;
+$m = length($scale);
+for $mc $i in $scale do (
+    $chord = $mc + $triad;
+    for $mc in $chord do (
+        ezsampler($mc).transcribe(($i - 1) * 500) 
+    ) 
+);
+compile(
+    @respell 'chewandchen' @clefs 'g'
+)

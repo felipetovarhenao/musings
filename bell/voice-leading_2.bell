@@ -1,0 +1,16 @@
+## rank: 6
+$chord = c5 e5 g5 bb5;
+$voicing = -400 -300 -200 -100;
+$onset = 0;
+$unit = 750;
+for $i in 0...3 do (
+    for $j in 1...length($chord) do (
+        for $mc in $chord do (
+            ezsampler($mc @duration $unit).transcribe($onset) 
+        );
+        $vl = $voicing:$j;
+        $chord:$j += $vl;
+        $onset += $unit
+    ) 
+);
+compile()

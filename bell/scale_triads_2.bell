@@ -1,0 +1,12 @@
+## rank: 4.3
+$scale = c5 d5 e5 f5 g5 a5 b5;
+$ids = 0 2 4;
+$m = length($scale);
+for $i in 0...(length($scale) - 1) do (
+    $addrs = (($ids + $i) % $m) + 1;
+    $triad = $scale:[$addrs];
+    for $mc in $triad do (
+        ezsampler($mc).transcribe($i * 500) 
+    ) 
+);
+compile(@clefs 'g')

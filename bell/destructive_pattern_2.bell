@@ -1,0 +1,15 @@
+## rank: 6
+$profile = c5 g5 d5 a5 e5 b5;
+$size = length($profile);
+$unit = 120;
+$attacks = (0...($size - 1)) * $unit;
+$span = $size * $unit;
+$events = trans([$profile] [$attacks]).sort(($a, $b -> $a::1 < $b::1));
+$onset = 0;
+for $i in 0...length($events) do (
+    for $e in $events.right($i) with @unwrap 1 do (
+        ezsampler($e:1).transcribe($e:2 + $onset) 
+    );
+    $onset += $span
+);
+compile(@clefs 'g')

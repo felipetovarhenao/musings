@@ -1,0 +1,13 @@
+## rank: 6.01
+$unit = 200;
+$maxtime = 10000;
+$n = 5;
+$onset = 0;
+for $i in 1...$n do (
+    $beat = $unit * $i;
+    $numnotes = floor($maxtime/$beat);
+    for $n in 0...($numnotes - 1) do (
+        ezsampler(f2mc(110 * $i)).transcribe($n * $beat) 
+    ) 
+);
+compile()

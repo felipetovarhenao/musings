@@ -1,0 +1,7 @@
+## rank: 4
+$beats = 350 :* 6;
+$beats = for $i in 0...3 collect $beats * (2/3) ** $i;
+for $onset $i in dx2x($beats), $beat in $beats do (
+    ezsampler(@duration $beat).transcribe($onset @gain if $i % 2 == 1 then 1 else 0.5) 
+);
+compile(@clefs 'g')

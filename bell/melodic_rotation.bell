@@ -1,0 +1,11 @@
+## rank: 2
+$scale = c5 d5 e5 f5 g5;
+$onset = 0;
+for $i in 0...length($scale) do (
+    for $mc in $scale.rot($i) do (
+        ezsampler($mc).transcribe($onset);
+        $onset += 150
+    );
+    $onset += 300
+);
+compile(@clefs 'g')

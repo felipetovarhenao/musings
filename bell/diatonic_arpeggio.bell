@@ -1,0 +1,13 @@
+## rank: 5.5
+$chord = c5 eb5 g5 bb5;
+$size = $chord.length();
+$pat = dx2x((1 1 -1) :* 9);
+$onset = 0;
+for $i in $pat do (
+    $oct = $i // $size;
+    $i = ($i % $size) + 1;
+    $mc = $chord:$i + $oct * 1200;
+    ezsampler($mc).transcribe($onset);
+    $onset += 125
+);
+compile(@clefs 'gg')

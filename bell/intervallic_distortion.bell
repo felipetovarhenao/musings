@@ -1,0 +1,8 @@
+## rank: 4.3
+$unit = 500;
+for $d $di in arithmser(1, -1, null, 9) do (
+    for $mc in f2mc((1...5) ** $d * 440) do (
+        ezsampler($mc).transcribe(($di - 1) * $unit) 
+    ) 
+);
+compile(@clefs 'fgg')

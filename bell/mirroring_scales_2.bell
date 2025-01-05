@@ -1,0 +1,13 @@
+## rank: 3.1
+$chord1 = (
+    c7 b6 a6 g6 f6 e6 d6 c6 
+) :* 4;
+$chord2 = dx2x(-1 * $chord1.x2dx(), 6000);
+$onset = 0;
+for $mc1 in $chord1, $mc2 in $chord2 do (
+    for $mc in $mc1 $mc2 do (
+        ezsampler($mc).transcribe($onset) 
+    );
+    $onset += 120
+);
+compile(@clefs 'g')

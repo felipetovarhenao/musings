@@ -1,0 +1,5 @@
+## rank: 2.3
+for $i in 0...15 do (
+    ezsampler(@duration if $i % 3 == 0 then 250 else 50).transcribe($i * 250) 
+);
+compile(@clefs 'g')

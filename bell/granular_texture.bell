@@ -1,0 +1,8 @@
+## rank: 2
+## random: 1
+$scale = c5 e5 g5 c6;
+for $i in 0...99 do (
+    $p = $scale.choose();
+    ezsampler($p).transcribe(xrand(4000)) 
+);
+compile(@clefs 'g')

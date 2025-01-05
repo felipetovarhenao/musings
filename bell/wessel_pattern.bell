@@ -1,0 +1,12 @@
+## rank: 2.7
+scoreconfig(
+    @clefs 'G' 'G' @voicenames for $i in 1...2 collect ['voice' $i] 
+);
+for $mc $i in (c5 e5 g5) :* 6 do (
+    ezsampler($mc).transcribe(
+        @onset ($i - 1) * 150
+        @voice ($i % 2 == 1) + 1
+        @pan $i % 2
+    ) 
+);
+compile(@numchannels 2 @clefs null)

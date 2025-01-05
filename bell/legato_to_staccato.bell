@@ -1,0 +1,8 @@
+## rank: 2.5
+$unit = 300;
+$onset = 0;
+for $i in arithmser(1, 0, null, 20) do (
+    ezsampler(@duration $i.scale(0, 1, 20, $unit)).transcribe($onset);
+    $onset += $unit
+);
+compile()

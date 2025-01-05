@@ -1,0 +1,6 @@
+## rank: 6
+for $mc $i in arithmser(0, 2 * pi, null, 24).sin().scale(-1, 1, 4800, 7200) do (
+    $mc += pitchdiff($mc, 0 2 4 5 7 9 11);
+    ezsampler($mc).transcribe(($i - 1) * 100) 
+);
+compile()

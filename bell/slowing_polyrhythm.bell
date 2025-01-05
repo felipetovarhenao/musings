@@ -1,0 +1,20 @@
+## rank: 4.4
+$unit = 150;
+$voices = 3;
+scoreconfig(
+    @clefs 'G' :* $voices @voicenames for $i in 1...$voices collect ['voice' $i]
+);
+for $v in 1...$voices do (
+    $onset = 0;
+    $i = 1;
+    while $onset <= $unit * 28 do (
+        for $j in 1...$v do (
+            ezsampler(f2mc($v * 220)).transcribe(
+                $onset @voice $voices + 1 - $v @pan ($v - 1) / ($voices - 1) 
+            );
+            $onset += $unit * $i
+        );
+        $i += 1
+    ) 
+);
+compile(@clefs null)

@@ -1,0 +1,17 @@
+compile = (
+    $numchannels = 1, $respell = 'atonal', $clefs = 'fg' -> (
+        $clefs &&& scoreconfig(@clefs $clefs);
+        BP_DISPATCH_FUNC('roll', 'merge' 0 0);
+        BP_DISPATCH_FUNC(
+            'roll', 'respell' ($respell &&& ('@algorithm' $respell)) 
+        );
+        render(
+            @play 1
+            @process join(envelope(@duration 500)) normalize(-6) 
+            @numchannels $numchannels
+        );
+        $filename = '../public/puzzles/' + thispath(1).getkey('name');
+        export($filename + '.mp3');
+        export($filename + '.llll') 
+    ) 
+)

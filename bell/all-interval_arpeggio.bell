@@ -1,0 +1,5 @@
+## rank: 3.3
+for $mc $mci in dx2x(rev(1...11) * 100, 3600) do (
+    ezsampler($mc).transcribe(($mci - 1) * 150) 
+);
+compile(@clefs 'fgg')

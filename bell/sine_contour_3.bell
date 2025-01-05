@@ -1,0 +1,9 @@
+## rank: 5
+$n = 5;
+$res = 8;
+$a = arithmser(0, 2 * pi * $n, null, $res * $n);
+$amp = arithmser(1, 0, null, $res * $n);
+for $mc $i in (sin($a) * $amp).scale(-1, 1, 4800, 7200) do (
+    ezsampler($mc).transcribe(($i - 1) * 100) 
+);
+compile()

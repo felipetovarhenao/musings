@@ -1,0 +1,12 @@
+## rank: 4.1
+$end = c4 g4 e5 b5;
+$start = c5 :* length($end);
+$n = 10;
+$unit = 500;
+for $w $wi in arithmser(0, 1, null, $n) do (
+    $chord = (1 - $w) * $start + $end * $w;
+    for $mc in float($chord) do (
+        ezsampler($mc).transcribe(($wi - 1) * $unit) 
+    ) 
+);
+compile()

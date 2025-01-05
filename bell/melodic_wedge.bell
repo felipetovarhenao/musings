@@ -1,0 +1,8 @@
+## rank: 5
+$mc = 6000;
+for $shift $i in (1...24) * 100 do (
+    $sign = $i % 2 * 2 - 1;
+    ezsampler($mc).transcribe(($i - 1) * 150);
+    $mc += $shift * $sign
+);
+compile()

@@ -1,0 +1,5 @@
+## rank: 4.5
+$onsets = arithmser(0, 1, null, 20) ** 2 * 4000;
+$onsets = $onsets.x2dx().rev().dx2x();
+for $t in $onsets do ezsampler().transcribe($t);
+compile(@clefs 'g')

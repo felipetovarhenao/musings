@@ -1,0 +1,21 @@
+## rank: 4
+$mel = c5 e5 g5 b5;
+$n = 4;
+scoreconfig(
+    @clefs 'G' :* $n @voicenames for $i in 1...$n collect ['voice' $i] 
+);
+$totdur = 120 * 2 ** ($n - 1);
+for $i in 0...($n - 1) do (
+    $reps = 2 ** $i;
+    $unit = $totdur / $reps;
+    $onset = 0;
+    for $mc in $mel :* $reps do (
+        ezsampler($mc).transcribe(
+            @onset $onset
+            @voice $i + 1
+            @pan $i/$n
+        );
+        $onset += $unit
+    ) 
+);
+compile(@numchannels 2 @clefs null)

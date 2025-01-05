@@ -1,0 +1,9 @@
+## rank: 7
+$n = 50;
+$a = arithmser(0, 2 * pi, null, $n);
+$x = cos($a).scale(-1, 1, 0, 1500);
+$y = sin($a).scale(-1, 1, 4800, 8400);
+for $onset in $x, $mc in $y do (
+    ezsampler($mc).transcribe($onset) 
+);
+compile()

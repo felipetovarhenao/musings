@@ -1,0 +1,9 @@
+## rank: 6
+$spectrum = (1...16) * 110;
+$spectrum = for $mc in f2mc($spectrum) collect $mc += pitchdiff($mc, 0 2 4 5 7 9 11);
+$onset = 0;
+for $mc in $spectrum do (
+    ezsampler($mc).transcribe($onset);
+    $onset += 150
+);
+compile(@clefs 'fgg')

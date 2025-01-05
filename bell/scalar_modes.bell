@@ -1,0 +1,12 @@
+## rank: 2.9
+$intervals = 300 200 200 300 200;
+$onset = 0;
+for $i in 0...length($intervals) do (
+    $scale = $intervals.rot(-$i).dx2x(6000);
+    for $mc in $scale do (
+        ezsampler($mc).transcribe($onset);
+        $onset += 125
+    );
+    $onset += 250
+);
+compile(@clefs 'g')

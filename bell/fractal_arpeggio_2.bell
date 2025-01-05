@@ -1,0 +1,13 @@
+## rank: 7.5
+$span = 0 2400;
+$ratio = 0.8 0.2;
+$n = 4;
+$onset = 0;
+for $i in 1...$n do (
+    for $mc in $span + 4800 do (
+        ezsampler($mc).transcribe($onset);
+        $onset += 150
+    );
+    $span = dx2x(for $x in x2dx($span) collect $x * $ratio) 
+);
+compile()

@@ -1,0 +1,4 @@
+## rank: 1.25
+$triad = c5 e5 g5 c6;
+for $mc $i in $triad :* 8 do ezsampler($mc).transcribe(($i - 1) * 125);
+compile(@clefs 'g')

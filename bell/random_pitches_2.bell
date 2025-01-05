@@ -1,0 +1,8 @@
+## rank: 1.95
+## random: 1
+setseed(2);
+for $i in 0...25 do (
+    $mc = xchoose(0 2 4 5 7 9 11) * 100 + 6000;
+    ezsampler($mc).transcribe($i * 200) 
+);
+compile(@clefs 'g')

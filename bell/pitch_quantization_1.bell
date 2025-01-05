@@ -1,0 +1,9 @@
+## rank: 2.2
+$spectrum = f2mc((1...16) * 110);
+$spectrum = round($spectrum / 100) * 100;
+$onset = 0;
+for $mc in $spectrum do (
+    ezsampler($mc).transcribe($onset);
+    $onset += 150
+);
+compile(@clefs 'fgg')

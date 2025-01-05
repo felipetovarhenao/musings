@@ -1,0 +1,9 @@
+## rank: 4.7
+$pat = 300 -500 -200 400;
+$pat = dx2x(
+    for $i in 0...length($pat) collect $pat.rot($i), 6000
+);
+for $mc $i in $pat do (
+    ezsampler($mc).transcribe(($i - 1) * 150) 
+);
+compile()

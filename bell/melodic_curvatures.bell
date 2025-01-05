@@ -1,0 +1,11 @@
+## rank: 5.8
+$ramp = arithmser(0, 1, null, 12);
+$curves = arithmser(1, -1, null, 5).exp2();
+$onset = 0;
+for $e in $curves do (
+    for $mc in scale($ramp ** $e, 0, 1, 4800, 8400) do (
+        ezsampler($mc).transcribe($onset);
+        $onset += 150
+    ) 
+);
+compile()

@@ -1,0 +1,4 @@
+## rank: 3.1
+$n = 16;
+for $i in (1...$n) do ezsampler(f2mc($n/$i * 110)).transcribe(($i - 1) * 200);
+compile()

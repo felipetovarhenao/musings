@@ -1,0 +1,12 @@
+## rank: 5
+$pat = rev(1...5) * 100;
+$mc = 4800;
+$onset = 0;
+for $i in (0...length($pat)) do (
+    for $shift in $pat.right($i) do (
+        ezsampler($mc).transcribe($onset);
+        $onset += 150;
+        $mc += $shift
+    ) 
+);
+compile()

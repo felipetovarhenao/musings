@@ -1,0 +1,3 @@
+## rank: 4.5
+for $t in arithmser(0, 1, null, 20) ** 2 * 4000 do ezsampler().transcribe($t);
+compile(@clefs 'g')

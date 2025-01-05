@@ -1,0 +1,10 @@
+## rank: 3.7
+$pat = (1/4 1/8 1/16 1/16) * 2000;
+$onset = 0;
+for $i in 0...$pat.length() do (
+    for $dur $j in $pat.rot($i), $mc in 6000 6200 6400 6500 do (
+        ezsampler($mc).transcribe($onset @gain if $j == 1 then 1 else 0.5);
+        $onset += $dur
+    ) 
+);
+compile(@clefs 'g')

@@ -1,0 +1,5 @@
+## rank: 2
+for $i in 0...16 do (
+    ezsampler().transcribe(@onset $i * 200 @gain if $i % 4 == 0 then 1 else 0.5) 
+);
+compile()

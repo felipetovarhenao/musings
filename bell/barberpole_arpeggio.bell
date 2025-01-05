@@ -1,0 +1,11 @@
+## rank: 5
+$shift = 0;
+$onset = 0;
+$n = 60;
+for $i in 1...$n do (
+    $fq = mc2f(($shift % 3600) + 4800);
+    ezsampler($fq.f2mc()).transcribe($onset % 3000);
+    $shift += 300;
+    $onset += 100
+);
+compile()

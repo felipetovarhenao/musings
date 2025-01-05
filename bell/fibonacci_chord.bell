@@ -1,0 +1,8 @@
+## rank: 5.1
+$series = 0 1;
+$mc = 8400;
+for $i in (0...9) do (
+    ezsampler($mc + $series:-1 * -100).transcribe($i * 150);
+    $series _= $series:-2 + $series:-1
+);
+compile(@clefs 'ffg')

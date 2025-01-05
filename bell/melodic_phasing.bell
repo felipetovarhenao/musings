@@ -1,0 +1,18 @@
+## rank: 5
+scoreconfig(
+    @clefs 'G' 'G' @voicenames 'voice1' 'voice2' 
+);
+$chord = c5 d5 e5;
+$size = length($chord);
+$totdur = 4500;
+$reps = 12;
+for $n $i in $reps + (0 1) do (
+    $onset = 0;
+    for $mc in $chord :* $n do (
+        ezsampler($mc).transcribe(
+            $onset @pan $i - 1 @voice $i
+        );
+        $onset += $totdur / ($n * $size) 
+    ) 
+);
+compile(@numchannels 2 @clefs null)

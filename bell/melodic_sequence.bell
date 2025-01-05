@@ -1,0 +1,9 @@
+## rank: 2.4
+$pat = (200 100 -100 100) :* 6;
+$pat = $pat.dx2x();
+$onset = 0;
+for $dx in $pat do (
+    ezsampler(6000 + $dx).transcribe($onset);
+    $onset += 150
+);
+compile(@clefs 'g')

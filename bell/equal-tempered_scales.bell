@@ -1,0 +1,11 @@
+## rank: 2.25
+$onset = 0;
+for $i in 2...12 do (
+    $s = 1200/$i;
+    for $j in 0...$i do (
+        $mc = 6000 + $s * $j;
+        ezsampler($mc).transcribe($onset);
+        $onset += 150
+    ) 
+);
+compile(@clefs 'g')
