@@ -21,10 +21,6 @@
         "rank": 2
     },
     {
-        "file": "rhythmic_interp",
-        "rank": 5.7
-    },
-    {
         "file": "interval_cycle_1",
         "rank": 1.1
     },
@@ -132,6 +128,10 @@
     {
         "file": "chord_interpolation_2",
         "rank": 4.1
+    },
+    {
+        "file": "rhythmic_interpolation",
+        "rank": 5.7
     },
     {
         "file": "mirroring_scales_1",
