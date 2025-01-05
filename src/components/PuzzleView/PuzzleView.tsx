@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { PuzzleMetadata } from "../../data/types";
 import snakeToText from "../../utils/snakeToText";
 import AppLogo from "../AppLogo/AppLogo";
+import StarRanking from "../StarRanking/StarRanking";
 
 type PuzzleViewType = {
   previous?: PuzzleMetadata;
@@ -64,6 +65,7 @@ const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
           {previous && <Link to={`/${previous.file}`}>previous: {snakeToText(previous.file)}</Link>}
           {next && <Link to={`/${next.file}`}>next puzzle: {snakeToText(next.file)}</Link>}
         </nav>
+        <StarRanking score={metadata.rank} />
         <h2>{title}</h2>
       </div>
 
@@ -71,14 +73,14 @@ const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
         <source src={`puzzles/${metadata.file}.mp3`} type="audio/mpeg" />
       </audio>
 
+      <div className="puzzle-score-roll-container">
+        <img className="puzzle-score-roll" src={`puzzles/${metadata.file}.png`} alt={`${metadata.file}`} ref={imageRef} style={imageStyle} />
+      </div>
       {metadata.random && (
         <div className="puzzle-note">
           <p>This puzzle is non-deterministic and involves randomization</p>
         </div>
       )}
-      <div className="puzzle-score-roll-container">
-        <img className="puzzle-score-roll" src={`puzzles/${metadata.file}.png`} alt={`${metadata.file}`} ref={imageRef} style={imageStyle} />
-      </div>
     </div>
   );
 };
