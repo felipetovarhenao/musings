@@ -1,0 +1,17 @@
+## rank: 6.5
+## legend: after Tom Johnson (1939-2024)
+$mel = c5 f5 bb5 g5 d5;
+$size = length($mel);
+$i = 0;
+$unit = 150;
+$onset = 0;
+for $n in 1...$size do (
+    for $p in 1...$size do (
+        for $m in 1...$n do (
+            ezsampler($mel:($i + 1)).transcribe($onset + ($m - 1) * $unit);
+            $i = ($i + 1) % $size
+        );
+        $onset += $unit * ($size + 1) 
+    ) 
+);
+compile(@clefs 'g')

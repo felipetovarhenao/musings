@@ -11,7 +11,10 @@ compile = (
             @numchannels $numchannels
         );
         $filename = thispath(1).getkey('name');
-        export('../public/puzzles/' + $filename + '.mp3');
+        $mp3 = '../public/puzzles/' + $filename + '.mp3';
+        if $mp3.exists() == 0 then (
+            export('../public/puzzles/' + $filename + '.mp3')
+        );
         export('./' + $filename + '.llll') 
     ) 
 )

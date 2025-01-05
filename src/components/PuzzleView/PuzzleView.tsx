@@ -119,6 +119,7 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
         <div className="puzzleview-banner-title">
           <span>{`#${id + 1}`}</span>
           <h2>{title}</h2>
+          {metadata.legend && <span className="puzzleview-banner-legend">{metadata.legend}</span>}
         </div>
         <StarRanking score={metadata.rank} />
       </div>
