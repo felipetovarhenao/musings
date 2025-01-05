@@ -1,0 +1,20 @@
+## rank: 6
+$pat = 6 3 2 1;
+$tile = dx2x($pat);
+$period = reduce($pat, #+);
+$numnotes = length($pat);
+$voices = $period / $numnotes;
+scoreconfig(
+    @clefs 'g' :* $voices @voicenames for $offset in 1...$voices collect ['voice' $offset] 
+);
+$unit = 150;
+for $r in 0...2 do (
+    for $offset $v in (0...2) * 4 do (
+        for $t in left(($tile + $offset) % $period, -1) do (
+            ezsampler(6000 + $offset * 100).transcribe(
+                $t * $unit + $unit * $period * $r @voice $voices + 1 - $v @pan $offset/$voices
+            ) 
+        ) 
+    ) 
+);
+compile(@clefs null)
