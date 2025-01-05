@@ -25,8 +25,32 @@
 }
 
 .puzzleview-player {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.puzzleview-wavesurfer {
   width: 100%;
+}
+.puzzleview-wavesurfer-button {
+  cursor: pointer;
+  background-color: #ffffff00;
+  border: none;
+  border-radius: 10px;
+  font-size: 36px;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  align-items: center;
+  transition-duration: 0.1s;
+  color: #407add;
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+    color: #78a3ed;
+  }
 }
 
 .puzzleview-score-container {
