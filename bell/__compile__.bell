@@ -10,8 +10,8 @@ compile = (
             @process join(envelope(@duration 500)) normalize(-6) 
             @numchannels $numchannels
         );
-        $filename = '../public/puzzles/' + thispath(1).getkey('name');
-        export($filename + '.mp3');
-        export($filename + '.llll') 
+        $filename = thispath(1).getkey('name');
+        export('../public/puzzles/' + $filename + '.mp3');
+        export('./' + $filename + '.llll') 
     ) 
 )

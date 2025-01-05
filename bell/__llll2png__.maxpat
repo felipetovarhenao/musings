@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 887.0, 178.0, 938.0, 764.0 ],
+		"rect" : [ 300.0, 194.0, 938.0, 764.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,89 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 164.0, 620.0, 68.0, 22.0 ],
+					"text" : "creating $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 164.0, 652.0, 82.0, 22.0 ],
+					"text" : "print @level 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 94.0, 588.0, 177.0, 22.0 ],
+					"text" : "zl reg"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 94.0, 482.0, 177.0, 22.0 ],
+					"text" : "t l l"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 94.0, 552.0, 74.0, 22.0 ],
+					"text" : "sel notfound"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 283.0, 342.5, 150.0, 22.0 ],
+					"text" : "sprintf ../public/puzzles/%s"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 94.0, 515.0, 77.0, 22.0 ],
+					"text" : "absolutepath"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-47",
 					"maxclass" : "newobj",
@@ -171,7 +254,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 94.0, 457.0, 146.0, 22.0 ],
+					"patching_rect" : [ 94.0, 689.0, 146.0, 22.0 ],
 					"text" : "exportimage $1 @dpi 300"
 				}
 
@@ -183,7 +266,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 94.0, 387.0, 57.0, 22.0 ],
+					"patching_rect" : [ 94.0, 412.0, 57.0, 22.0 ],
 					"text" : "tosymbol"
 				}
 
@@ -195,7 +278,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 94.0, 353.0, 208.0, 22.0 ],
+					"patching_rect" : [ 94.0, 378.0, 208.0, 22.0 ],
 					"text" : "combine path file @triggers 1"
 				}
 
@@ -219,7 +302,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 94.0, 421.0, 127.0, 22.0 ],
+					"patching_rect" : [ 94.0, 446.0, 127.0, 22.0 ],
 					"text" : "sprintf symout %s.png"
 				}
 
@@ -251,34 +334,39 @@
 , 			{
 				"box" : 				{
 					"bwcompatibility" : 80300,
-					"clefs" : [ "FG" ],
+					"clefs" : [ "G", "G" ],
 					"defaultnoteslots" : [ "null" ],
 					"embed" : 0,
+					"enharmonictable" : [ "default", "default" ],
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"hidevoices" : [ 0, 0 ],
 					"id" : "obj-16",
+					"keys" : [ "CM", "CM" ],
 					"linknotesizetoslot" : 30,
 					"loop" : [ 0.0, 1000.0 ],
 					"maxclass" : "bach.roll",
+					"midichannels" : [ 1, 1 ],
 					"numinlets" : 6,
 					"numoutlets" : 8,
-					"numvoices" : 1,
+					"numparts" : [ 1, 1 ],
+					"numvoices" : 2,
 					"out" : "nnnnnnn",
 					"outlettype" : [ "", "", "", "", "", "", "", "bang" ],
-					"patching_rect" : [ 455.0, 528.0, 916.0, 282.333333333333371 ],
+					"patching_rect" : [ 455.0, 760.0, 916.0, 282.333333333333371 ],
 					"pitcheditrange" : [ "null" ],
 					"ruler" : 1,
 					"rulermode" : 0,
 					"showdurations" : 0,
 					"showstems" : 0,
 					"showvelocity" : 3,
-					"stafflines" : [ 5 ],
+					"stafflines" : [ 5, 5 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"tonedivision" : 8,
 					"versionnumber" : 80300,
-					"voicenames" : [ "output" ],
-					"voicespacing" : [ 15.0, 17.0 ],
+					"voicenames" : [ "[", "voice", 1, "]", "[", "voice", 2, "]" ],
+					"voicespacing" : [ 15.0, 17.0, 17.0 ],
 					"vzoom" : 200.0,
 					"zoom" : 150.0
 				}
@@ -374,8 +462,52 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-34", 1 ],
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 1 ],
+					"source" : [ "obj-19", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"order" : 0,
+					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"order" : 1,
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
@@ -402,14 +534,21 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-34", 1 ],
+					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-24", 2 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-40", 0 ],
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-27", 0 ]
 				}
 
@@ -474,6 +613,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
 					"source" : [ "obj-7", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
