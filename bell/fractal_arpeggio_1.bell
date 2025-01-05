@@ -1,11 +1,15 @@
 ## rank: 5
 $pat = 0 400 700;
 $start = 6000;
-$n = 3;
-for $i in 1...$n do ($start = for $x in $start collect $x + $pat);
+$n = 4;
 $onset = 0;
-for $mc in $start do (
-    ezsampler($mc).transcribe($onset);
-    $onset += 125
+for $i in 1...$n do (
+    $start = for $x in $start collect (
+        for $mc in $x do (
+            ezsampler($x).transcribe($onset);
+            $onset += 1000 / exp2($i - 1) 
+        );
+        $x + $pat
+    ) 
 );
 compile(@clefs 'g')
