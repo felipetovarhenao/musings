@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { PuzzleMetadata } from "../../data/types";
 import snakeToText from "../../utils/snakeToText";
 import StarRanking from "../StarRanking/StarRanking";
-import "./puzzlecard.css";
+import "./PuzzleCard.css";
 
 type PuzzleCardType = {
   id: number;

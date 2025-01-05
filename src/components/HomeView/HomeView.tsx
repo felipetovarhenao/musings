@@ -1,7 +1,7 @@
 import puzzles from "../../assets/puzzles.json";
 import AppLogo from "../AppLogo/AppLogo";
 import PuzzleCard from "../PuzzleCard/PuzzleCard";
-import "./homeview.css";
+import "./HomeView.css";
 
 const HomeView = () => {
   return (

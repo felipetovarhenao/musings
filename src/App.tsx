@@ -1,5 +1,4 @@
 import { Route, HashRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
 import HomeView from "./components/HomeView/HomeView";
 
 import puzzles from "./assets/puzzles.json";

@@ -5,8 +5,8 @@ import { PuzzleMetadata } from "../../data/types";
 import snakeToText from "../../utils/snakeToText";
 import AppLogo from "../AppLogo/AppLogo";
 import StarRanking from "../StarRanking/StarRanking";
-import "./puzzleview.css";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import "./PuzzleView.css";
 
 type PuzzleViewType = {
   id: number;

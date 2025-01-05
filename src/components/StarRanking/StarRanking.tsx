@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import starFilled from "@iconify-icons/mdi/star";
 import starHalf from "@iconify-icons/mdi/star-half-full";
 import starOutline from "@iconify-icons/mdi/star-outline";
-import "./starranking.css";
+import "./StarRanking.css";
 
 interface StarRankingProps {
   score: number; // Score can now be a float between 0 and 10
