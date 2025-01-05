@@ -1,0 +1,82 @@
+.puzzleview-banner {
+  margin-bottom: 20px;
+}
+
+.puzzleview-banner-navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.puzzleview-banner-title {
+  text-transform: lowercase;
+}
+
+.puzzleview-banner-navbar a {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.puzzleview-banner-navbar-link {
+  display: flex;
+  text-transform: lowercase;
+  gap: 2px;
+  align-items: center;
+  text-align: center;
+}
+
+.puzzleview-player {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.puzzleview-wavesurfer {
+  width: 100%;
+}
+.puzzleview-wavesurfer-button {
+  cursor: pointer;
+  background-color: #ffffff00;
+  border: none;
+  border-radius: 10px;
+  font-size: 36px;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  align-items: center;
+  transition-duration: 0.1s;
+  color: #407add;
+  &:hover {
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+    color: #78a3ed;
+  }
+}
+
+.puzzleview-score-container {
+  display: block; /* Shrink-wrap to the image dimensions */
+  height: 50%; /* Set height to 50% of the image's intrinsic height */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Disable vertical scrolling */
+  background-color: white;
+  padding: 20px;
+  border: solid 1px #e3e3e3;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.puzzleview-score {
+  height: auto; /* Keep image's intrinsic height */
+  width: 100%; /* Ensure full width for overflow to take effect */
+}
+
+.puzzleview-notes {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ece6da;
+  color: #7f622c;
+  border: 1px solid #ddcab0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}

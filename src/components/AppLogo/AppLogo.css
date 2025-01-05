@@ -1,0 +1,16 @@
+/* App Logo */
+.applogo {
+  cursor: pointer;
+  text-align: center;
+  padding: 20px 0;
+  color: black;
+}
+
+.applogo-img {
+  max-height: 50px;
+}
+
+.applogo h1 {
+  margin: 0;
+  font-weight: 700;
+} 
