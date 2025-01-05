@@ -4,14 +4,17 @@ import { PuzzleMetadata } from "../../data/types";
 import snakeToText from "../../utils/snakeToText";
 import AppLogo from "../AppLogo/AppLogo";
 import StarRanking from "../StarRanking/StarRanking";
+import "./puzzleview.css";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 type PuzzleViewType = {
+  id: number;
   previous?: PuzzleMetadata;
   metadata: PuzzleMetadata;
   next?: PuzzleMetadata;
 };
 
-const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
+const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
   const title = snakeToText(metadata.file);
 
   // Ref for the audio element
@@ -57,27 +60,51 @@ const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
     }
   }, [metadata.file]);
 
-  return (
-    <div className="puzzle-view">
-      <div className="banner">
-        <AppLogo />
-        <nav className="nav-bar">
-          {previous && <Link to={`/${previous.file}`}>previous: {snakeToText(previous.file)}</Link>}
-          {next && <Link to={`/${next.file}`}>next puzzle: {snakeToText(next.file)}</Link>}
-        </nav>
-        <StarRanking score={metadata.rank} />
-        <h2>{title}</h2>
-      </div>
+  const imageContainerRef = useRef<HTMLDivElement>(null);
 
-      <audio className="puzzle-player" controls ref={audioRef}>
+  useEffect(() => {
+    // Scroll the container to the left whenever the image changes
+    if (imageContainerRef.current) {
+      imageContainerRef.current.scrollTo({ left: 0, behavior: "smooth" }); // Scroll to the beginning
+    }
+  }, [metadata.file]); // Dependency ensures effect runs when the imageUrl changes
+
+  return (
+    <div className="puzzleview">
+      <div className="puzzleview-banner">
+        <AppLogo />
+        <nav className="puzzleview-banner-navbar">
+          {previous ? (
+            <Link className="puzzleview-banner-navbar-link" to={`/${previous.file}`}>
+              <Icon icon="material-symbols:arrow-back-ios-rounded" /> {snakeToText(previous.file)}
+            </Link>
+          ) : (
+            <div />
+          )}
+          {next ? (
+            <Link className="puzzleview-banner-navbar-link" to={`/${next.file}`}>
+              {snakeToText(next.file)}
+              <Icon icon="material-symbols:arrow-forward-ios-rounded" />
+            </Link>
+          ) : (
+            <div />
+          )}
+        </nav>
+        <div className="puzzleview-banner-title">
+          <span>{`#${id + 1}`}</span>
+          <h2>{title}</h2>
+        </div>
+        <StarRanking score={metadata.rank} />
+      </div>
+      <audio className="puzzleview-player" controls ref={audioRef}>
         <source src={`puzzles/${metadata.file}.mp3`} type="audio/mpeg" />
       </audio>
 
-      <div className="puzzle-score-roll-container">
-        <img className="puzzle-score-roll" src={`puzzles/${metadata.file}.png`} alt={`${metadata.file}`} ref={imageRef} style={imageStyle} />
+      <div ref={imageContainerRef} className="puzzleview-score-container">
+        <img className="puzzleview-player-score" src={`puzzles/${metadata.file}.png`} alt={`${metadata.file}`} ref={imageRef} style={imageStyle} />
       </div>
       {metadata.random && (
-        <div className="puzzle-note">
+        <div className="puzzleview-notes">
           <p>This puzzle is non-deterministic and involves randomization</p>
         </div>
       )}

@@ -1,28 +1,32 @@
-import { useNavigate } from "react-router-dom";
 import puzzles from "../../assets/puzzles.json";
-import snakeToText from "../../utils/snakeToText";
 import AppLogo from "../AppLogo/AppLogo";
-import StarRanking from "../StarRanking/StarRanking";
+import PuzzleCard from "../PuzzleCard/PuzzleCard";
+import "./homeview.css";
 
 const HomeView = () => {
-  const navigate = useNavigate();
   return (
-    <div className="home-view">
+    <div className="homeview">
       <AppLogo />
-      <p className="subheader">A collection of algorithmic music puzzles</p>
-      <h3 className="about">About</h3>
-      <p className="about-text">
-        Each puzzle consists of a musical output in the form of a score in Western notation and an audio rendition of it. The goal is to come up with
-        some algorithm that generates the musical output as closely as possible.
+      <h3 className="homeview-about">about</h3>
+      <p className="homeview-about-text">
+        This website is a collection of algorithmic music puzzles with varying degrees of difficulty. Each puzzle consists of a desired musical
+        output, in the form of a score in Western music notation and an audio rendition of it. The goal of each puzzle is to come up with some
+        algorithm that generates the musical output, in whichever programming environment you choose (Max, Python, OpenMusic, bellplay~, etc.). While
+        there are multiple solutions to each puzzle, the more elegant and efficient your algorithm is, the better. Broadly speaking, solving these
+        puzzles require two types of skills:
       </p>
-      <div className="puzzle-grid">
+      <ul className="homeview-about-text">
+        <li>
+          <b>Analytical:</b> your ability to understand and identify the underlying pattern or logic behind each puzzle.
+        </li>
+        <li>
+          <b>Technical:</b> your ability to implement the algorithm to generate the desired musical output.
+        </li>
+      </ul>
+      <p className="homeview-about-text">Happy coding!</p>
+      <div className="homeview-puzzle-grid">
         {puzzles.map((puzzle, i) => (
-          <div className="puzzle-card" key={i} onClick={() => navigate(`/${puzzle.file}`)}>
-            <img className="puzzle-card-bg" src={`puzzles/${puzzle.file}.png`} alt="" />
-            <span className="puzzle-card-id">{`${i + 1}`}</span>
-            <h5 className="puzzle-card-title">{snakeToText(puzzle.file)}</h5>
-            <StarRanking score={puzzle.rank} />
-          </div>
+          <PuzzleCard key={i} id={i} puzzle={puzzle} />
         ))}
       </div>
     </div>

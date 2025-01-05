@@ -1,0 +1,19 @@
+.homeview-about {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.homeview-about-text {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* Puzzle Grid */
+.homeview-puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}

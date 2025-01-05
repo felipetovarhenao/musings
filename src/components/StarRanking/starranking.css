@@ -1,0 +1,16 @@
+.starranking {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 2.5px 5px 2.5px;
+}
+.starranking-icon {
+  font-size: 18px;
+  &.filled {
+    color: #ffb82a;
+  }
+  &.empty {
+    color: #b9bed1;
+  }
+}
