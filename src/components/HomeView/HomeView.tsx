@@ -19,7 +19,7 @@ const HomeView = () => {
         {puzzles.map((puzzle, i) => (
           <div className="puzzle-card" key={i} onClick={() => navigate(`/${puzzle.file}`)}>
             <img className="puzzle-card-bg" src={`puzzles/${puzzle.file}.png`} alt="" />
-            <span className="puzzle-card-id">{`Puzzle ${i}`}</span>
+            <span className="puzzle-card-id">{`${i + 1}`}</span>
             <h5 className="puzzle-card-title">{snakeToText(puzzle.file)}</h5>
             <StarRanking score={puzzle.rank} />
           </div>
