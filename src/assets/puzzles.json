@@ -61,8 +61,13 @@
         "rank": 6
     },
     {
+        "file": "melodic_sandwich",
+        "rank": 8,
+        "legend": "after Tom Johnson (1939-2024)"
+    },
+    {
         "file": "melodic_groupings",
-        "rank": 6,
+        "rank": 6.5,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
@@ -221,6 +226,11 @@
     {
         "file": "destructive_pattern_1",
         "rank": 3.8
+    },
+    {
+        "file": "self-similar_melody",
+        "rank": 6,
+        "legend": "after Tom Johnson (1939-2024)"
     },
     {
         "file": "melodic_rotation",

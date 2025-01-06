@@ -13,8 +13,8 @@ compile = (
         $filename = thispath(1).getkey('name');
         $mp3 = '../public/puzzles/' + $filename + '.mp3';
         if $mp3.exists() == 0 then (
-            export('../public/puzzles/' + $filename + '.mp3')
-        );
-        export('./' + $filename + '.llll') 
+            export('../public/puzzles/' + $filename + '.mp3');
+            export('./' + $filename + '.llll') 
+        )
     ) 
 )

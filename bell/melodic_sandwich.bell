@@ -1,0 +1,26 @@
+## rank: 8
+## legend: after Tom Johnson (1939-2024)
+$pat = 1 2 1;
+$n = 5;
+$onset = 0;
+$scale = c5 d5 e5 f5 g5 a5 b5 c6;
+$unit = 150;
+for $i in 1...$n do (
+    for $id in $pat do (
+        ezsampler($scale:$id).transcribe($onset);
+        $onset += $unit
+    );
+    $onset += $unit;
+    $pat = for $dyad in group(
+        $pat @modulos 2 @overlap 1
+    ) with @unwrap 1 collect (
+        $a = $dyad:1;
+        $b = $dyad:2;
+        $c = (
+            if abs($b - $a) == 1 then (maximum($a $b) ) else minimum($a $b) 
+        ) + 1;
+        $a $c
+    );
+    $pat _= 1
+);
+compile(@clefs 'g')
