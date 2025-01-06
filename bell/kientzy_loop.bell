@@ -1,0 +1,24 @@
+## rank: 5.3
+## legend: after Tom Johnson (1939-2024)
+$voices = 3;
+scoreconfig(
+    @clefs 'g' 'f' 'f' @voicenames for $i in 1...$voices collect ['voice' $i] 
+);
+$mel = g5 f5 e5 d5 e5 f5 g5 d5;
+$size = length($mel);
+$unit = 200;
+$maxcount = $size * 5;
+for $mul $v in 1 3 5 do (
+    $onset = 0;
+    $count = 0;
+    while $count * $mul < $maxcount do (
+        $id = ($count % $size) + 1;
+        $rot = (($v - 1) % 2) * -2;
+        $mc = rot($mel, $rot):$id;
+        ezsampler($mc - 1200 * ($v - 1)).transcribe(
+            $count * $unit * $mul @voice $v @pan ($v - 1) / $voices
+        );
+        $count += 1
+    ) 
+);
+compile(@clefs null @numchannels 2)
