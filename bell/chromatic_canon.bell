@@ -34,7 +34,7 @@ for $onset $v in 0 $max * $unit do (
             );
             for $mc in $pattern :* $reps do (
                 ezsampler($mc).transcribe(
-                    $onset @voice $voice @pan ($v - 1) 
+                    $onset @voice $voice @pan ($voice - 1) 
                 );
                 $onset += $unit
             ) 
