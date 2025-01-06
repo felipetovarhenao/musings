@@ -1,0 +1,44 @@
+## rank: 9.9
+## legend: after James Tenney (1934–2006)
+$triad = bb4 f5 db5;
+$axis = ed5;
+$rev = 0;
+$seq = null;
+for $dir in 1 -1 do (
+    $shifts = 0 600;
+    if $dir < 0 then $shifts = rev($shifts);
+    for $shift in $shifts do (
+        $chord = ($triad - $axis) * $dir + $axis + $shift;
+        $seq _= if $rev % 2 == 0 then $chord else rev($chord);
+        $rev += 1
+    ) 
+);
+$N = length($seq);
+$unit = 200;
+$max = 120;
+scoreconfig(
+    @clefs 'g' 'g' 
+);
+for $onset $v in 0 $max * $unit do (
+    $phase = 2...($N - $v + 1) $max;
+    for $part in 1 2 do (
+        if $part == 2 && $v == 1 then addmarker($onset, 'middle');
+        if $part == 2 then $phase = rev($phase);
+        $voice = if $part == 1 then $v else 3 - $v;
+        for $n in $phase do (
+            $reps = int(round($max / $n));
+            addmarker($onset, 'x' + tosymbol($reps));
+            if $part == 2 then $phase = rev($phase);
+            $pattern = if $part == 1 then left($seq, $n) else rev(
+                left(rev($seq), $n) 
+            );
+            for $mc in $pattern :* $reps do (
+                ezsampler($mc).transcribe(
+                    $onset @voice $voice @pan ($v - 1) 
+                );
+                $onset += $unit
+            ) 
+        ) 
+    ) 
+);
+compile(@clefs null @numchannels 2)
