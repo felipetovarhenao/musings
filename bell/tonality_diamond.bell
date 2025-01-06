@@ -1,0 +1,17 @@
+## rank: 8.5
+## legend: after Harry Partch (1901–1974)
+$N = 5;
+$onset = 0;
+$unit = 200;
+for $n in 0...($N - 1) do (
+    $lims = arithmser(1, $n * 2 + 1, 2);
+    for $num in $lims do (
+        for $den in $lims do (
+            $r = octreduce($num/$den);
+            ezsampler(r2mc($r)).transcribe($onset);
+            $onset += $unit
+        ) 
+    );
+    $onset += $unit * 4
+);
+compile()
