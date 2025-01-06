@@ -1,4 +1,5 @@
 ## rank: 2.7
+## legend: after David L. Wessel (1942—2014)
 scoreconfig(
     @clefs 'G' 'G' @voicenames for $i in 1...2 collect ['voice' $i] 
 );
