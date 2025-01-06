@@ -15,7 +15,7 @@ const HomeView = () => {
         <a href="https://cycling74.com/downloads">Max</a>/<a href="https://www.bachproject.net/">bach</a>,{" "}
         <a href="https://www.python.org/">Python</a>, <a href="https://openmusic-project.github.io/">OpenMusic</a>,{" "}
         <a href="https://github.com/felipetovarhenao/bellplay/releases/latest/">bellplay~</a>, etc.). While there are multiple solutions to each
-        puzzle, the more elegant and efficient your algorithm is, the better. Broadly speaking, solving these puzzles require two types of skills:
+        puzzle, the more elegant and efficient your algorithm is, the better. Broadly speaking, solving these puzzles requires two types of skills:
       </p>
       <ul className="homeview-about-text">
         <li>
