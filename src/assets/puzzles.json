@@ -23,7 +23,7 @@
     },
     {
         "file": "interval_cycle_1",
-        "rank": 1.1
+        "rank": 1
     },
     {
         "file": "melodic_curvatures",
@@ -253,7 +253,7 @@
     },
     {
         "file": "regular_pulse",
-        "rank": 1
+        "rank": 0.5
     },
     {
         "file": "kientzy_loop",
