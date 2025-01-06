@@ -1,0 +1,16 @@
+## rank: 7
+## legend: after Tom Johnson (1939-2024)
+$pat = 1 1;
+$n = 5;
+$scale = a4 b4 c#5 d#5 e5;
+$onset = 0;
+$unit = 200;
+for $i in 1...$n do (
+    for $j in $pat do (
+        ezsampler($scale:$j - 1200).transcribe($onset);
+        $onset += $unit
+    );
+    $onset += $unit * 4;
+    $pat = for $x in $pat collect $x $i + 1
+);
+compile()
