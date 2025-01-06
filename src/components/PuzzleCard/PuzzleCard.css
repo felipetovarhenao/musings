@@ -37,7 +37,7 @@
 .puzzle-card-bg-container {
   position: relative; /* Ensures positioning context */
   width: 100%; /* Adjust as needed */
-  height: 90px; /* Set the desired height */
+  height: 110px; /* Set the desired height */
   overflow: hidden; /* Prevent image overflow */
 }
 
