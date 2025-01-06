@@ -1,0 +1,18 @@
+## rank: 10
+## legend: after James Tenney (1934–2006)
+$octave = 4000/log2(9/8);
+$n = 24;
+$maxtime = $octave * log2($n * 2);
+for $i in 1...$n do (
+    $delay = log2($i) * $octave;
+    $onset = 0;
+    $j = 0;
+    while $onset < ($maxtime - $delay) do (
+        ezsampler(
+            f2mc(55 * $i) @duration 4000
+        ).transcribe($onset + $delay);
+        $onset = log2(($j + 8) /8) * $octave;
+        $j += 1
+    ) 
+);
+compile(@clefs 'ffgg')
