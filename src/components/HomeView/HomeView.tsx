@@ -10,7 +10,7 @@ const HomeView = () => {
       <h3 className="homeview-about">about</h3>
       <p className="homeview-about-text">
         This website is a collection of algorithmic music puzzles with varying degrees of difficulty. Each puzzle consists of a desired musical
-        output, in the form of a score in Western music notation and an audio rendition of it. The goal of each puzzle is to come up with some
+        output, in the form of a score in Western music notation and an audio rendition of it. The goal for each puzzle is to come up with some
         algorithm that generates the musical output, in whichever programming environment you choose (
         <a href="https://cycling74.com/downloads">Max</a>/<a href="https://www.bachproject.net/">bach</a>,{" "}
         <a href="https://www.python.org/">Python</a>, <a href="https://openmusic-project.github.io/">OpenMusic</a>,{" "}
