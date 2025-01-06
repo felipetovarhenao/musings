@@ -1,0 +1,18 @@
+## rank: 6.7
+## legend: after Tom Johnson (1939-2024)
+$rules = [1 1 2 1] [2 2 2];
+$seq = 1;
+$n = 5;
+$onset = 0;
+$unit = 150;
+for $i in 1...$n do (
+    $seq = for $j in $seq collect (
+        ezsampler(
+            @pitch (6000 4800):$j
+        ).transcribe($onset);
+        $onset += $unit;
+        $rules.$j
+    );
+    $onset += $unit * 4
+);
+compile()
