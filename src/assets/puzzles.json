@@ -292,6 +292,10 @@
         "rank": 3.1
     },
     {
+        "file": "farey_sequence",
+        "rank": 8
+    },
+    {
         "file": "melodic_phasing",
         "rank": 5
     },

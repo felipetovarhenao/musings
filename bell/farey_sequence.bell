@@ -1,0 +1,22 @@
+## rank: 8
+$seq = 0/1 1/1;
+$n = 16;
+$period = 4000;
+$onset = 0;
+for $i in 1...($n + 1) do (
+    for $x in $seq.left(-1) do (
+        ezsampler(
+            f2mc(55 * den($x)) @duration $period
+        ).transcribe($onset + $x * $period) 
+    );
+    $onset += $period;
+    $seq = for $r in group(
+        $seq @modulos 2 @overlap 1
+    ) with @unwrap 1 collect (
+        $num = num($r:1) + num($r:2);
+        $den = den($r:1) + den($r:2);
+        $r:1 (if $den <= $i then $num/$den) 
+    );
+    $seq _= 1/1
+);
+compile(@clefs 'fgg')
