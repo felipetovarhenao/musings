@@ -3,7 +3,7 @@ $scale = c5 d5 e5 f5 g5 a5 b5 c6;
 $size = length($scale);
 $contour = 0 1;
 $onset = 0;
-for $n in 2...7 do (
+for $n in 2...8 do (
     $pat = arithmser(1, $size, null, $n).round();
     for $mc in $scale:[$pat] do (
         ezsampler($mc).transcribe($onset);
