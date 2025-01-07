@@ -1,0 +1,22 @@
+## rank: 7
+$seq = 0 1 0;
+$n = 5;
+$onset = 0;
+$unit = 200;
+$scale = c5 d5 e5 f5 g5 a5 b5;
+$size = length($scale);
+for $i in 1...$n do (
+    for $x in $seq do (
+        $oct = floor($x / $size);
+        $mc = $scale:(mod($x, $size) + 1);
+        ezsampler($mc + $oct * 1200 @duration 4000).transcribe($onset);
+        $onset += $unit
+    );
+    $seq = (
+        for $x in group(
+            $seq @modulos 2 @overlap 1
+        ) with @unwrap 1 collect $x:1 + (0 $x:1 - $x:2) 
+    ) $seq:-1;
+    $onset += $unit
+);
+compile()
