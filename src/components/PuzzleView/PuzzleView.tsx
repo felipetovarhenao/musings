@@ -79,6 +79,17 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
   }, [metadata.file]);
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space") {
+        e.preventDefault();
+        togglePlayPause();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [togglePlayPause]);
+
+  useEffect(() => {
     if (imageRef.current) {
       const image = imageRef.current;
 

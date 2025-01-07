@@ -44,14 +44,17 @@ $period = 0;
 for $m in 1...$M do (
     $reps = int(round($M / $m));
     for $k $ki in 1...$m do (
+        $b = ezsampler(
+            f2mc(($ki) * 55) @duration ($m * $unit * 2) / $k
+        ).process(
+            gain(
+                sqrt(($m + 1 - $k) / $m)
+            ) 
+        );
         $onset = 0;
         $rhythm = euclidean($k, $m);
         for $beat in $rhythm :* $reps do (
-            if $beat == 1 then (
-                ezsampler(
-                    f2mc(($ki) * 55) @duration ($m * $unit * 2) / $k
-                ).transcribe( @onset $onset + $period) 
-            );
+            if $beat == 1 then $b.transcribe(@onset $onset + $period);
             $onset += $unit
         ) 
     );
