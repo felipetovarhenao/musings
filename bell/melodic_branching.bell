@@ -1,0 +1,22 @@
+## rank: 6.5
+$mel = 0 1;
+$n = 6;
+$onset = 0;
+$scale = c5 d5 e5 f5 g5 a5 b5;
+$unit = 150;
+for $i in 1...$n do (
+    $mel = for $x in $mel with @unwrap 1 collect (
+        [
+            for $addr in $x collect (
+                $id = mod($addr, 7);
+                $oct = floor($addr / 7) * 1200;
+                $mc = $scale:($id + 1) + $oct;
+                ezsampler($mc).transcribe($onset);
+                $onset += $unit;
+                $addr + (-$i $i) 
+            ) 
+        ] 
+    );
+    $onset += $unit
+);
+compile()
