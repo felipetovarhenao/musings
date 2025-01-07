@@ -49,14 +49,12 @@ for $m in 1...$M do (
         for $beat in $rhythm :* $reps do (
             if $beat == 1 then (
                 ezsampler(
-                    f2mc(($ki) * 110) @duration ($m * $unit) / $k
-                ).transcribe(
-                    @onset $onset + $period @gain sqrt(($M - $ki + 1) / $M) 
-                ) 
+                    f2mc(($ki) * 55) @duration ($m * $unit * 2) / $k
+                ).transcribe( @onset $onset + $period) 
             );
             $onset += $unit
         ) 
     );
     $period += $onset
 );
-compile()
+compile(@clefs 'ffgg')
