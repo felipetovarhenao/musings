@@ -35,7 +35,6 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
       setIsPlaying(waveSurferRef.current.isPlaying()); // Update the playing state
     }
   };
-
   useEffect(() => {
     setIsPlaying(false);
     if (!waveContainerRef.current) return;
@@ -52,8 +51,28 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
     // Load the audio file when the component is mounted
     waveSurferRef.current.load(`puzzles/${metadata.file}.mp3`);
 
-    // Cleanup the WaveSurfer instance on unmount
+    // Handle scrolling of the image container based on audio progress
+    const handleAudioProgress = () => {
+      if (waveSurferRef.current && imageContainerRef.current && imageRef.current) {
+        const duration = waveSurferRef.current.getDuration();
+        const currentTime = waveSurferRef.current.getCurrentTime();
+        const progress = currentTime / duration;
+
+        // Calculate the new scroll position
+        const imageWidth = imageRef.current.offsetWidth;
+        const containerWidth = imageContainerRef.current.offsetWidth;
+        const scrollableWidth = imageWidth - containerWidth;
+
+        // Scroll to the calculated position
+        imageContainerRef.current.scrollLeft = scrollableWidth * progress;
+      }
+    };
+
+    waveSurferRef.current.on("audioprocess", handleAudioProgress);
+
+    // Cleanup the WaveSurfer instance and remove event listeners on unmount
     return () => {
+      waveSurferRef.current?.un("audioprocess", handleAudioProgress);
       waveSurferRef.current?.destroy();
       waveSurferRef.current = null;
     };
