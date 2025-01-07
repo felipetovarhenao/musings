@@ -1,0 +1,62 @@
+## rank: 9
+## legend: after Godfried Toussaint (1944–2019)
+euclidean = (
+    $k, $m -> (
+        ## 
+        if $k == $m then 1 :* $m
+        ## 
+        else if $k == 0 then 0 :* $m
+        ## 
+        else if $k > $m then printerror('$k cannot be greater than $m in euclidean().') 
+        ## 
+        else (
+            $pat = [1 :* $k] [0 :* ($m - $k)];
+            $do = 1;
+            $count = 0;
+            $sizes = 2;
+            $bins = trans($pat);
+            $getsplit = (
+                $bins -> (
+                    $l = length($bins::1);
+                    $split = null ;
+                    for $b $i in right($bins, 1) with @unwrap 1 as $split == null do (
+                        $len = length($b);
+                        if $len != $l then $split = $i
+                    );
+                    $split ||| length($bins) 
+                ) 
+            );
+            while $sizes > 1 && $count < 10 do (
+                $bins = slice($bins, $getsplit($bins));
+                $bins = for $x in trans($bins) collect [flat($x)];
+                $sizes = length(
+                    thin(for $b in $bins collect length($b::1)) 
+                );
+                $count += 1
+            );
+            flat($bins) 
+        ) 
+    ) 
+);
+$unit = 200;
+$M = 16;
+$period = 0;
+for $m in 1...$M do (
+    $reps = int(round($M / $m));
+    for $k $ki in 1...$m do (
+        $onset = 0;
+        $rhythm = euclidean($k, $m);
+        for $beat in $rhythm :* $reps do (
+            if $beat == 1 then (
+                ezsampler(
+                    f2mc(($ki) * 110) @duration ($m * $unit) / $k
+                ).transcribe(
+                    @onset $onset + $period @gain sqrt(($M - $ki + 1) / $M) 
+                ) 
+            );
+            $onset += $unit
+        ) 
+    );
+    $period += $onset
+);
+compile()
