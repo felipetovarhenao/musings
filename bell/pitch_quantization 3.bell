@@ -1,0 +1,12 @@
+## rank: 6.3
+$n = 36;
+$onset = 0;
+$unit = 150;
+for $i in 0...($n - 1) do (
+    $w = $i / ($n - 1);
+    $mc = 6000 + ($i * 200) % 1200;
+    $mc += pitchdiff($mc, 0 2 4 5 7 9 11) * $w;
+    ezsampler($mc).transcribe($onset);
+    $onset += $unit
+);
+compile(@clefs 'g')
