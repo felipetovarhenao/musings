@@ -1,0 +1,24 @@
+## rank: 4
+## after Steve Reich (1936)
+scoreconfig(
+    @voicenames for $i in 1 2 collect ['voice' $i] @clefs 'g' 'g' 
+);
+$pat = 1 1 1 0 1 1 0 1 0 1 1 0;
+$unit = 150;
+$onset = 0;
+$b = ezsampler(@duration $unit);
+$reps = 4;
+$label = 'x' + tosymbol($reps);
+for $v in 1...2 do (
+    $onset = 0;
+    for $i in 0...length($pat) do (
+        $v == 1 && addmarker($onset, $label);
+        for $beat in (if $v > 1 then rot($pat, -$i) else $pat) :* $reps do (
+            if $beat == 1 then $b.transcribe(
+                $onset @voice $v @pan 2 - $v
+            );
+            $onset += $unit
+        ) 
+    ) 
+);
+compile(@clefs null @numchannels 2)
