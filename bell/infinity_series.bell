@@ -1,0 +1,20 @@
+## rank: 6.5
+## legend: after Per Nørgård (1932)
+$n = 4;
+$seq = 0 1;
+$onset = 0;
+$unit = 180;
+$scale = c5 d5 e5 f5 g5 a5 b5;
+$size = length($scale);
+for $i in 0...($n - 1) do (
+    $seq _= for $x $xi in $seq collect (
+        $addr = mod($x, $size);
+        $oct = floor($x / $size) * 1200;
+        $mc = $scale:($addr + 1) + $oct;
+        ezsampler($mc).transcribe($onset);
+        $onset += $unit;
+        if $xi == 1 then $x else -$x $x + 1
+    );
+    $onset += $unit * 2
+);
+compile(@clefs 'g')
