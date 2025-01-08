@@ -1,0 +1,11 @@
+## rank: 3.7
+$pat = c6 b5 a5 g5 f5 e5 d5 c5;
+$len = length($pat);
+$m = 5;
+for $i in 0...lcm($len, $m) do (
+    if $i % $m != 0 then (
+        $id = $i % $len;
+        ezsampler($pat:($id + 1)).transcribe($i * 180) 
+    ) 
+);
+compile(@clefs 'g')
