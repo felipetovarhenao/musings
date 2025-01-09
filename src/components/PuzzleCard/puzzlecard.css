@@ -16,7 +16,7 @@
 .puzzle-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-} 
+}
 
 .puzzle-card-id {
   font-size: small;
@@ -38,7 +38,7 @@
 .puzzle-card-bg-container {
   position: relative; /* Ensures positioning context */
   width: 100%; /* Adjust as needed */
-  height: 110px; /* Set the desired height */
+  height: 125px; /* Set the desired height */
   overflow: hidden; /* Prevent image overflow */
 }
 
