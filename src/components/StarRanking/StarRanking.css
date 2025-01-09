@@ -14,5 +14,6 @@
   }
   &.empty {
     color: #b9bed1;
+    font-size: 15px;
   }
 }
