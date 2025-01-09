@@ -22,12 +22,15 @@ const StarRanking: React.FC<StarRankingProps> = ({ score, className }) => {
       if (score >= position) {
         // Full star
         icon = starFilled;
+        icon = "pepicons-pop:music-note-single-circle-filled";
       } else if (score > position - 1 && score < position) {
         icon = starHalf;
+        icon = "pepicons-pop:music-note-single-circle";
       } else {
         // Empty star
         icon = starOutline;
         type = "empty";
+        icon = "pepicons-pop:music-note-single-circle";
       }
       return <Icon icon={icon} key={index} className={`starranking-icon ${type} ${className || ""}`} />;
     });
