@@ -1,4 +1,4 @@
-## rank: 5.5
+## rank: 4.5
 $ser = 4 3 4;
 $ser = $ser :* 2;
 $ser = thin(dx2x($ser));
