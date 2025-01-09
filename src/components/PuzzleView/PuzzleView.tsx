@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import { PuzzleMetadata } from "../../data/types";
@@ -17,6 +17,7 @@ type PuzzleViewType = {
 
 const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
   const title = snakeToText(metadata.file);
+  const navigate = useNavigate();
 
   // Ref for the WaveSurfer instance
   const waveSurferRef = useRef<WaveSurfer | null>(null);
@@ -83,6 +84,12 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
       if (e.code === "Space") {
         e.preventDefault();
         togglePlayPause();
+      } else if (e.code == "ArrowLeft" && previous) {
+        e.preventDefault();
+        navigate(`/${previous.file}`);
+      } else if (e.code == "ArrowRight" && next) {
+        e.preventDefault();
+        navigate(`/${next.file}`);
       }
     };
     window.addEventListener("keydown", handleKeyDown);

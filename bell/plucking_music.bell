@@ -1,5 +1,5 @@
 ## rank: 4
-## after Steve Reich (1936)
+## legend: after Steve Reich (1936)
 scoreconfig(
     @voicenames for $i in 1 2 collect ['voice' $i] @clefs 'g' 'g' 
 );
