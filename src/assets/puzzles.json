@@ -71,6 +71,11 @@
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
+        "file": "tone_rows",
+        "rank": 4.5,
+        "addmarker($onset, $forms": "($id + 1));"
+    },
+    {
         "file": "melodic_groupings",
         "rank": 6.5,
         "legend": "after Tom Johnson (1939-2024)"
