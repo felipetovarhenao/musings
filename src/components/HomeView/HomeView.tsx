@@ -1,9 +1,16 @@
+import { useState } from "react";
 import puzzles from "../../assets/puzzles.json";
 import AppLogo from "../AppLogo/AppLogo";
 import PuzzleCard from "../PuzzleCard/PuzzleCard";
+import SearchBar from "../SearchBar/SearchBar";
 import "./HomeView.css";
 
 const HomeView = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter puzzles based on search query
+  const filteredPuzzles = puzzles.filter((puzzle) => puzzle.file.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <div className="homeview view">
       <AppLogo />
@@ -30,10 +37,16 @@ const HomeView = () => {
         environment you choose to work with.
       </p>
       <p className="homeview-about-text">Happy coding!</p>
+      <div className="homeview-puzzle-header">
+        <h3 className="homeview-about">puzzles</h3>
+        <SearchBar query={searchQuery} onSearch={setSearchQuery} />
+      </div>
       <div className="homeview-puzzle-grid">
-        {puzzles.map((puzzle, i) => (
-          <PuzzleCard key={i} id={i} puzzle={puzzle} />
-        ))}
+        {filteredPuzzles.length > 0 ? (
+          filteredPuzzles.map((puzzle, i) => <PuzzleCard key={i} id={i} puzzle={puzzle} />)
+        ) : (
+          <div>No puzzles match "{searchQuery}".</div>
+        )}
       </div>
     </div>
   );
