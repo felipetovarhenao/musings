@@ -7,10 +7,15 @@
 }
 
 .applogo-img {
-  max-height: 50px;
+  max-height: 64px;
+}
+
+.applogo-header {
+  font-family: "Monofett", serif;
+  font-size: 48px;
 }
 
 .applogo h1 {
   margin: 0;
   font-weight: 700;
-} 
+}
