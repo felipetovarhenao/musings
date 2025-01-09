@@ -1,0 +1,14 @@
+## rank: 4.5
+## legend: after Ivan Wyschnegradsky (1893—1979)
+$onset = 0;
+$scale = 0;
+$unit = 180;
+for $i in 1...13 do (
+    for $mc in sort($scale) + 6000 do (
+        ezsampler($mc @duration $unit * 1.1).transcribe($onset);
+        $onset += $unit
+    );
+    $onset += $unit;
+    $scale _= ($scale:-1 + 550) % 1200
+);
+compile()
