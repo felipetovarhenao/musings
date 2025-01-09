@@ -1,0 +1,18 @@
+## rank: 7.2
+$unit = 150;
+$numprimes = 16;
+$primes = primeser(@maxcount $numprimes);
+$maxtime = maximum($primes) * $unit;
+$count = 0;
+for $prime $i in $primes do (
+    $onset = 0;
+    $mc = f2mc(55 * $i);
+    $b = ezsampler(
+        @pitch $mc @duration $unit * max(4, $prime) 
+    );
+    while $onset <= $maxtime do (
+        $b.transcribe($onset);
+        $onset += $unit * $prime
+    ) 
+);
+compile(@clefs 'ffg')
