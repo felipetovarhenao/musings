@@ -133,7 +133,7 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
   }, [metadata.file]);
 
   return (
-    <div className="puzzleview">
+    <div className="puzzleview view">
       <div className="puzzleview-banner">
         <AppLogo />
         <nav className="puzzleview-banner-navbar">

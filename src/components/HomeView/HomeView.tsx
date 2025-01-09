@@ -5,7 +5,7 @@ import "./HomeView.css";
 
 const HomeView = () => {
   return (
-    <div className="homeview">
+    <div className="homeview view">
       <AppLogo />
       <h3 className="homeview-about">about</h3>
       <p className="homeview-about-text">

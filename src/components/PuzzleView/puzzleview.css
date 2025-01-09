@@ -16,9 +16,11 @@
   font-weight: 600;
   font-size: 0.9rem;
 }
+
 .puzzleview-banner-legend {
   font-style: italic;
 }
+
 .puzzleview-banner-navbar-link {
   display: flex;
   text-transform: lowercase;
@@ -34,9 +36,11 @@
   align-items: center;
   padding-bottom: 20px;
 }
+
 .puzzleview-wavesurfer {
   width: 100%;
 }
+
 .puzzleview-wavesurfer-button {
   cursor: pointer;
   background-color: #ffffff00;
