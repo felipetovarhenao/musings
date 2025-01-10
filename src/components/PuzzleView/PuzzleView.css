@@ -108,4 +108,12 @@
   border: 1px solid #ddcab0;
   border-radius: 5px;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  .puzzleview-notes-icon {
+    font-size: 24px;
+    align-items: center;
+  }
 }

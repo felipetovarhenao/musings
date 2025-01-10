@@ -42,6 +42,7 @@ const HomeView = () => {
         environment you choose to work with.
       </p>
       <p className="homeview-about-text">Happy coding!</p>
+      <hr className="homeview-separator"/>
       <div className="homeview-puzzle-header">
         <h3 className="homeview-about">puzzles</h3>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%", alignItems: "center" }}>

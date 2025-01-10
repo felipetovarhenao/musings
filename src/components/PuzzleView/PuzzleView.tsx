@@ -177,7 +177,8 @@ const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
       </div>
       {metadata.random && (
         <div className="puzzleview-notes">
-          <p>This puzzle is non-deterministic and involves randomization.</p>
+          <Icon className="puzzleview-notes-icon" icon={"ri:dice-line"} />
+          <p className="puzzleview-notes-text">This puzzle is non-deterministic and involves randomization.</p>
         </div>
       )}
     </div>
