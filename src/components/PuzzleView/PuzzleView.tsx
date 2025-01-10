@@ -7,6 +7,7 @@ import AppLogo from "../AppLogo/AppLogo";
 import StarRanking from "../StarRanking/StarRanking";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import "./PuzzleView.css";
+import eventTracker from "../../utils/eventTracker";
 
 type PuzzleViewType = {
   id: number;
@@ -130,6 +131,10 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
     if (imageContainerRef.current) {
       imageContainerRef.current.scrollTo({ left: 0, behavior: "smooth" }); // Scroll to the beginning
     }
+  }, [metadata.file]);
+
+  useEffect(() => {
+    eventTracker("view_puzzle", metadata.file);
   }, [metadata.file]);
 
   return (

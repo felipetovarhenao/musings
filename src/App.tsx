@@ -4,8 +4,17 @@ import HomeView from "./components/HomeView/HomeView";
 import puzzles from "./assets/puzzles.json";
 import PuzzleView from "./components/PuzzleView/PuzzleView";
 import { PuzzleMetadata } from "./data/types";
+import ReactGA from "react-ga4";
+import { useEffect } from "react";
+import eventTracker from "./utils/eventTracker";
 
 function App() {
+  ReactGA.initialize("G-STZBGCVN1Y", {
+    testMode: !window.origin.includes("felipe-tovar-henao.com"),
+  });
+  useEffect(() => {
+    eventTracker("start_app");
+  }, []);
   return (
     <Router>
       <div className="view">

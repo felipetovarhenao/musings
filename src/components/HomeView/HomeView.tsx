@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import puzzles from "../../assets/puzzles.json";
 import AppLogo from "../AppLogo/AppLogo";
 import PuzzleCard from "../PuzzleCard/PuzzleCard";
 import SearchBar from "../SearchBar/SearchBar";
 import "./HomeView.css";
+import eventTracker from "../../utils/eventTracker";
 
 const HomeView = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter puzzles based on search query
   const filteredPuzzles = puzzles.filter((puzzle) => puzzle.file.toLowerCase().includes(searchQuery.toLowerCase()));
+
+  useEffect(() => {
+    eventTracker("home_page");
+  }, []);
 
   return (
     <div className="homeview view">
