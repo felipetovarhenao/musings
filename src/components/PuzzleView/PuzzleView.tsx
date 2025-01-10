@@ -8,6 +8,7 @@ import StarRanking from "../StarRanking/StarRanking";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import "./PuzzleView.css";
 import eventTracker from "../../utils/eventTracker";
+import PuzzleToggle from "../PuzzleToggle/PuzzleToggle";
 
 type PuzzleViewType = {
   previous?: PuzzleMetadata;
@@ -158,7 +159,8 @@ const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
           )}
         </nav>
         <div className="puzzleview-banner-title">
-          <span>{`#${metadata.id + 1}`}</span>
+          <PuzzleToggle puzzle={metadata} />
+          <div>{`#${metadata.id + 1}`}</div>
           <h2>{title}</h2>
           {metadata.legend && <span className="puzzleview-banner-legend">{metadata.legend}</span>}
         </div>

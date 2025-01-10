@@ -6,6 +6,9 @@
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &.completed {
+    border: solid 2px #66baed;
+  }
 }
 
 .puzzle-card-title {
@@ -50,4 +53,16 @@
   height: 100%; /* Ensures the image fills the parent */
   object-fit: cover; /* Makes the image cover the parent while maintaining aspect ratio */
   transform: translate(-50%, -50%); /* Centers the image */
+}
+
+.puzzle-card-completed {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.puzzle-card-completed-icon {
+  font-size: 20px;
+  color: #1da86b;
 }
