@@ -44,11 +44,14 @@ const HomeView = () => {
       <p className="homeview-about-text">Happy coding!</p>
       <div className="homeview-puzzle-header">
         <h3 className="homeview-about">puzzles</h3>
-        <SearchBar query={searchQuery} onSearch={setSearchQuery} />
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%", alignItems: "center" }}>
+          {searchQuery ? <span className="homeview-query-status">{`${filteredPuzzles.length} puzzles found.`}</span> : <span />}
+          <SearchBar query={searchQuery} onSearch={setSearchQuery} />
+        </div>
       </div>
       <div className="homeview-puzzle-grid">
         {filteredPuzzles.length > 0 ? (
-          filteredPuzzles.map((puzzle, i) => <PuzzleCard key={i} id={i} puzzle={puzzle} />)
+          filteredPuzzles.map((puzzle, i) => <PuzzleCard key={i} puzzle={puzzle} />)
         ) : (
           <div>No puzzles match "{searchQuery}".</div>
         )}

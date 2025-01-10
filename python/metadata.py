@@ -80,6 +80,8 @@ for script_file in os.listdir(bell_folder):
             **metadata,
         })
 
+script_info.sort(key=lambda x: x['rank'])
+script_info = [{"id": i, **x} for i, x in enumerate(script_info)]
 if missing:
     exit()
 # Write to JSON file

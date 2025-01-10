@@ -27,3 +27,9 @@
     margin-top: 0;
   }
 }
+.homeview-query-status {
+  padding: 5px;
+  font-style: italic;
+  color: #acacac;
+  white-space: nowrap;
+}

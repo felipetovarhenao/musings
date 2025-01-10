@@ -6,16 +6,15 @@ import "./PuzzleCard.css";
 import rankToColor from "../../utils/rankToColor";
 
 type PuzzleCardType = {
-  id: number;
   puzzle: PuzzleMetadata;
 };
-const PuzzleCard = ({ id, puzzle }: PuzzleCardType) => {
+const PuzzleCard = ({ puzzle }: PuzzleCardType) => {
   const navigate = useNavigate();
 
   return (
-    <div className="puzzle-card" key={id} onClick={() => navigate(`/${puzzle.file}`)}>
+    <div className="puzzle-card" onClick={() => navigate(`/${puzzle.file}`)}>
       <div className="puzzle-card-header" style={{ background: rankToColor(puzzle.rank) }}>
-        <div className="puzzle-card-id">{`#${id + 1}`}</div>
+        <div className="puzzle-card-id">{`#${puzzle.id + 1}`}</div>
         <div className="puzzle-card-title">{snakeToText(puzzle.file)}</div>
         <div />
       </div>

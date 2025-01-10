@@ -52,7 +52,7 @@
   padding: 5px;
   align-items: center;
   transition-duration: 0.1s;
-  color: #407add;
+  color: #66baed;
   &:hover {
     transform: scale(1.05);
     transition-duration: 0.1s;

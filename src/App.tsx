@@ -29,7 +29,6 @@ function App() {
                   path={`/${puzzle.file}`}
                   element={
                     <PuzzleView
-                      id={i}
                       previous={i > 0 ? puzzles[i - 1] : undefined}
                       next={i < puzzles.length - 1 ? puzzles[i + 1] : undefined}
                       metadata={puzzle}

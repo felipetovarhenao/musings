@@ -10,13 +10,12 @@ import "./PuzzleView.css";
 import eventTracker from "../../utils/eventTracker";
 
 type PuzzleViewType = {
-  id: number;
   previous?: PuzzleMetadata;
   metadata: PuzzleMetadata;
   next?: PuzzleMetadata;
 };
 
-const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
+const PuzzleView = ({ next, metadata, previous }: PuzzleViewType) => {
   const title = snakeToText(metadata.file);
   const navigate = useNavigate();
 
@@ -45,7 +44,7 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
     waveSurferRef.current = WaveSurfer.create({
       container: waveContainerRef.current,
       waveColor: "#ddd",
-      progressColor: "#4a90e2",
+      progressColor: "#66BAED",
       height: 60,
       normalize: true,
     });
@@ -159,7 +158,7 @@ const PuzzleView = ({ next, metadata, previous, id }: PuzzleViewType) => {
           )}
         </nav>
         <div className="puzzleview-banner-title">
-          <span>{`#${id + 1}`}</span>
+          <span>{`#${metadata.id + 1}`}</span>
           <h2>{title}</h2>
           {metadata.legend && <span className="puzzleview-banner-legend">{metadata.legend}</span>}
         </div>
