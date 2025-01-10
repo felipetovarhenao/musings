@@ -1,0 +1,9 @@
+## rank: 2.7
+$swell = 0 1 0;
+$totdur = 5000;
+$n = 30;
+for $x in arithmser(0, 1, null, $n) do (
+    $g = samplelist($swell, $x);
+    ezsampler().transcribe(@onset $x * $totdur @gain $g) 
+);
+compile(@clefs 'g')

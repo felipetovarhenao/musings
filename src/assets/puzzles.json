@@ -110,356 +110,361 @@
     },
     {
         "id": 21,
+        "file": "dynamic_swell",
+        "rank": 2.7
+    },
+    {
+        "id": 22,
         "file": "scalar_modes",
         "rank": 2.9
     },
     {
-        "id": 22,
+        "id": 23,
         "file": "harmonic_series_2",
         "rank": 3
     },
     {
-        "id": 23,
+        "id": 24,
         "file": "interval_cycle_2",
         "rank": 3
     },
     {
-        "id": 24,
+        "id": 25,
         "file": "mirroring_scales_2",
         "rank": 3.1
     },
     {
-        "id": 25,
+        "id": 26,
         "file": "subharmonic_series",
         "rank": 3.1
     },
     {
-        "id": 26,
+        "id": 27,
         "file": "harmonic_sequence",
         "rank": 3.2
     },
     {
-        "id": 27,
+        "id": 28,
         "file": "slowing_pulse",
         "rank": 3.3
     },
     {
-        "id": 28,
+        "id": 29,
         "file": "all-interval_arpeggio",
         "rank": 3.3
     },
     {
-        "id": 29,
+        "id": 30,
         "file": "rhythmic_rotation",
         "rank": 3.7
     },
     {
-        "id": 30,
+        "id": 31,
         "file": "modular_beats",
         "rank": 3.7
     },
     {
-        "id": 31,
+        "id": 32,
         "file": "destructive_pattern_1",
         "rank": 3.8
     },
     {
-        "id": 32,
+        "id": 33,
         "file": "interval_cycle_3",
         "rank": 3.9
     },
     {
-        "id": 33,
+        "id": 34,
         "file": "major_scale",
         "rank": 4
     },
     {
-        "id": 34,
+        "id": 35,
         "file": "sine_contour_1",
         "rank": 4
     },
     {
-        "id": 35,
+        "id": 36,
         "file": "tempo_modulation",
         "rank": 4
     },
     {
-        "id": 36,
+        "id": 37,
         "file": "chord_interpolation_1",
         "rank": 4
     },
     {
-        "id": 37,
+        "id": 38,
         "file": "fractal_polyrhythm",
         "rank": 4
     },
     {
-        "id": 38,
+        "id": 39,
         "file": "plucking_music",
         "rank": 4,
         "legend": "after Steve Reich (1936)"
     },
     {
-        "id": 39,
+        "id": 40,
         "file": "chord_interpolation_2",
         "rank": 4.1
     },
     {
-        "id": 40,
+        "id": 41,
         "file": "scale_triads_2",
         "rank": 4.3
     },
     {
-        "id": 41,
+        "id": 42,
         "file": "intervallic_distortion",
         "rank": 4.3
     },
     {
-        "id": 42,
+        "id": 43,
         "file": "slowing_polyrhythm",
         "rank": 4.4
     },
     {
-        "id": 43,
+        "id": 44,
         "file": "diatonicized_chromatic_scale",
         "rank": 4.5,
         "legend": "after Ivan Wyschnegradsky (1893\u20141979)"
     },
     {
-        "id": 44,
+        "id": 45,
         "file": "tone_rows",
         "rank": 4.5,
         "addmarker($onset, $forms": "($id + 1));"
     },
     {
-        "id": 45,
+        "id": 46,
         "file": "agogic_rallentando",
         "rank": 4.5
     },
     {
-        "id": 46,
+        "id": 47,
         "file": "agogic_acceleration",
         "rank": 4.5
     },
     {
-        "id": 47,
+        "id": 48,
         "file": "intervallic_rotation",
         "rank": 4.7
     },
     {
-        "id": 48,
+        "id": 49,
         "file": "melodic_wedge",
         "rank": 5
     },
     {
-        "id": 49,
+        "id": 50,
         "file": "subtractive_arpeggio",
         "rank": 5
     },
     {
-        "id": 50,
+        "id": 51,
         "file": "fractal_arpeggio_1",
         "rank": 5
     },
     {
-        "id": 51,
+        "id": 52,
         "file": "barberpole_arpeggio",
         "rank": 5
     },
     {
-        "id": 52,
+        "id": 53,
         "file": "contour_resampling",
         "rank": 5
     },
     {
-        "id": 53,
+        "id": 54,
         "file": "melodic_phasing",
         "rank": 5
     },
     {
-        "id": 54,
+        "id": 55,
         "file": "sine_contour_3",
         "rank": 5
     },
     {
-        "id": 55,
+        "id": 56,
         "file": "fibonacci_chord",
         "rank": 5.1
     },
     {
-        "id": 56,
+        "id": 57,
         "file": "kientzy_loop",
         "rank": 5.3,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 57,
+        "id": 58,
         "file": "voice-leading_1",
         "rank": 5.5
     },
     {
-        "id": 58,
+        "id": 59,
         "file": "diatonic_arpeggio",
         "rank": 5.5
     },
     {
-        "id": 59,
+        "id": 60,
         "file": "rhythmic_interpolation",
         "rank": 5.7
     },
     {
-        "id": 60,
+        "id": 61,
         "file": "melodic_curvatures",
         "rank": 5.8
     },
     {
-        "id": 61,
+        "id": 62,
         "file": "destructive_pattern_2",
         "rank": 6
     },
     {
-        "id": 62,
+        "id": 63,
         "file": "voice-leading_2",
         "rank": 6
     },
     {
-        "id": 63,
+        "id": 64,
         "file": "rhythmicon_1",
         "rank": 6
     },
     {
-        "id": 64,
+        "id": 65,
         "file": "pitch_quantization_2",
         "rank": 6
     },
     {
-        "id": 65,
+        "id": 66,
         "file": "self-similar_melody",
         "rank": 6,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 66,
+        "id": 67,
         "file": "sine_contour_2",
         "rank": 6
     },
     {
-        "id": 67,
+        "id": 68,
         "file": "rhythmic_tiling",
         "rank": 6
     },
     {
-        "id": 68,
+        "id": 69,
         "file": "rhythmicon_2",
         "rank": 6.01
     },
     {
-        "id": 69,
+        "id": 70,
         "file": "pitch_quantization_3",
         "rank": 6.3
     },
     {
-        "id": 70,
+        "id": 71,
         "file": "double_harmonic_series",
         "rank": 6.5
     },
     {
-        "id": 71,
+        "id": 72,
         "file": "melodic_groupings",
         "rank": 6.5,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 72,
+        "id": 73,
         "file": "infinity_series",
         "rank": 6.5,
         "legend": "after Per N\u00f8rg\u00e5rd (1932)"
     },
     {
-        "id": 73,
+        "id": 74,
         "file": "melodic_branching",
         "rank": 6.5
     },
     {
-        "id": 74,
+        "id": 75,
         "file": "plain_hunt_on_four",
         "legend": "after horse lords, based on analysis by The Pop Descriptivist",
         "rank": 6.5
     },
     {
-        "id": 75,
+        "id": 76,
         "file": "lindenmayer_rhythm",
         "rank": 6.7,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 76,
+        "id": 77,
         "file": "recursive_melody",
         "rank": 7
     },
     {
-        "id": 77,
+        "id": 78,
         "file": "elliptic_contour",
         "rank": 7
     },
     {
-        "id": 78,
+        "id": 79,
         "file": "melodic_doublings",
         "rank": 7,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 79,
+        "id": 80,
         "file": "prime_rhythm",
         "rank": 7.2
     },
     {
-        "id": 80,
+        "id": 81,
         "file": "fractal_arpeggio_2",
         "rank": 7.5
     },
     {
-        "id": 81,
+        "id": 82,
         "file": "melodic_sandwich",
         "rank": 8,
         "legend": "after Tom Johnson (1939-2024)"
     },
     {
-        "id": 82,
+        "id": 83,
         "file": "farey_sequence",
         "rank": 8
     },
     {
-        "id": 83,
+        "id": 84,
         "file": "tonality_diamond",
         "rank": 8.5,
         "legend": "after Harry Partch (1901\u20131974)"
     },
     {
-        "id": 84,
+        "id": 85,
         "file": "euclidean_canon",
         "rank": 9,
         "legend": "after Godfried Toussaint (1944\u20132019)"
     },
     {
-        "id": 85,
+        "id": 86,
         "file": "chromatic_canon",
         "rank": 9.9,
         "legend": "after James Tenney (1934\u20132006)"
     },
     {
-        "id": 86,
+        "id": 87,
         "file": "voice-leading_3",
         "rank": 9.9
     },
     {
-        "id": 87,
+        "id": 88,
         "file": "risset_rhythm",
         "rank": 10,
         "legend": "after Jean-Claude Risset (1938\u20142016)"
     },
     {
-        "id": 88,
+        "id": 89,
         "file": "spectral_canon",
         "rank": 10,
         "legend": "after James Tenney (1934\u20132006)"
