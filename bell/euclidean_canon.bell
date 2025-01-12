@@ -26,13 +26,12 @@ euclidean = (
                     $split ||| length($bins) 
                 ) 
             );
-            while $sizes > 1 && $count < 10 do (
+            while $sizes > 1 do (
                 $bins = slice($bins, $getsplit($bins));
                 $bins = for $x in trans($bins) collect [flat($x)];
                 $sizes = length(
                     thin(for $b in $bins collect length($b::1)) 
-                );
-                $count += 1
+                )
             );
             flat($bins) 
         ) 
@@ -48,7 +47,7 @@ for $m in 1...$M do (
             f2mc(($ki) * 55) @duration ($m * $unit * 2) / $k
         ).process(
             gain(
-                sqrt(($m + 1 - $k) / $m)
+                sqrt(($m + 1 - $k) / $m) 
             ) 
         );
         $onset = 0;
