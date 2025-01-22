@@ -2,7 +2,6 @@
 $unit = 200;
 $maxtime = 10000;
 $n = 5;
-$onset = 0;
 for $i in 1...$n do (
     $beat = $unit * $i;
     $numnotes = floor($maxtime/$beat);
