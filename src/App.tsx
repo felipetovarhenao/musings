@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route index path="/" element={<HomeView />} />
           {puzzles
-            .sort((a, b) => (a.rank > b.rank ? 1 : -1))
+            .sort((a, b) => (a.id > b.id ? 1 : -1))
             .map((puzzle: PuzzleMetadata, i: number) => {
               return (
                 <Route
