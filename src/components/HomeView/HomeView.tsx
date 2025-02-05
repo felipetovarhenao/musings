@@ -10,7 +10,7 @@ const HomeView = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filter puzzles based on search query
-  const filteredPuzzles = puzzles.filter((puzzle) => puzzle.file.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredPuzzles = puzzles.filter((puzzle) => puzzle.file.toLowerCase().replace("_", " ").includes(searchQuery.toLowerCase()));
 
   useEffect(() => {
     eventTracker("home_page");
@@ -42,7 +42,7 @@ const HomeView = () => {
         environment you choose to work with.
       </p>
       <p className="homeview-about-text">Happy coding!</p>
-      <hr className="homeview-separator"/>
+      <hr className="homeview-separator" />
       <div className="homeview-puzzle-header">
         <h3 className="homeview-about">puzzles</h3>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%", alignItems: "center" }}>
