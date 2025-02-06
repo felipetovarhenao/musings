@@ -1,17 +1,12 @@
 ## rank: 4.5
-$ser = 4 3 4;
-$ser = $ser :* 2;
-$ser = thin(dx2x($ser));
-$ser _= rev($ser) + 10;
+$ser = rev(dx2x(1...3));
+$ser = for $i in 0...2 collect $ser + $i * 4;
 $ser = $ser % 12;
 $onset = 0;
-$forms = 'O' 'I' 'R' 'IR';
 $unit = 200;
 $gap = $unit * 3;
 for $r in 0 1 do (
     for $i in 0 1 do (
-        $id = $r * 2 + $i;
-        ## addmarker($onset, $forms:($id + 1));
         for $j in $ser do (
             $mc = $j * 100 + 6000;
             ezsampler($mc @duration $gap).transcribe($onset);
